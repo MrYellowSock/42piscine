@@ -6,13 +6,11 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:11:29 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 06:47:57 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 14:19:10 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../shared.h"
-#include <unistd.h>
-
+#include "../myio.h"
 
 void	ft_print_comb2(int maxval, int digit)
 {
@@ -25,9 +23,9 @@ void	ft_print_comb2(int maxval, int digit)
 		right = left + 1;
 		while (right <= maxval)
 		{
-			ft_putnbr_base(left, 10);
+			m_put_nbr(left, 10, 2);
 			write(1, " ", 1);
-			ft_putnbr_base(right, 10);
+			m_put_nbr(right, 10, 2);
 			write(1, ", ", 2);
 			right = right + 1;
 		}
@@ -37,6 +35,6 @@ void	ft_print_comb2(int maxval, int digit)
 
 int	main(void)
 {
-	ft_print_comb2(10, 2);
+	ft_print_comb2(100, 2);
 	return (0);
 }

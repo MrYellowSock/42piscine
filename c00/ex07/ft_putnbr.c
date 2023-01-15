@@ -6,18 +6,19 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:14:07 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/13 18:30:45 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 14:19:31 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../shared.h"
+#include "../myio.h"
 
 void	ft_putnbr(int nb)
 {
-	ft_putnbr_base(nb, 10);
+	m_put_nbr(nb, 10, 0);
 }
 
 int	main(void)
 {
 	ft_putnbr(8004230);
+	ft_putnbr(-8004230);
 	return (0);
 }
