@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:13:57 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 14:13:51 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 21:20:01 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@ void	ft_print_comb(void)
 	{
 		if (m_is_uniq(start, 3))
 		{
+			if (start > 12)
+			{
+				write(1, ", ", 2);
+			}
 			m_put_nbr(start, 10, 3);
-			write(1, ", ", 2);
 		}
 		start += 1;
 	}

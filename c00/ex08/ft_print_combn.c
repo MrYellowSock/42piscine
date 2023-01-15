@@ -6,7 +6,7 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:52:54 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 07:45:07 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 21:26:07 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_combn(int n)
 {
 	int	first;
 	int	last;
-	int tot;
+	int	tot;
 
 	first = 1;
 	tot = 0;
@@ -25,7 +25,7 @@ void	ft_print_combn(int n)
 	{
 		if (m_is_uniq(first, n))
 		{
-			if(tot > 0)
+			if (tot > 0)
 			{
 				write(1, " ,", 2);
 			}
@@ -38,6 +38,6 @@ void	ft_print_combn(int n)
 
 int	main(void)
 {
-	ft_print_combn(3);
+	ft_print_combn(2);
 	return (0);
 }
