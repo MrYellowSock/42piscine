@@ -6,7 +6,11 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:23:31 by skulkamt          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/01/14 15:12:11 by skulkamt         ###   ########.fr       */
+=======
+/*   Updated: 2023/01/13 19:55:55 by skulkamt         ###   ########.fr       */
+>>>>>>> eda816b2d913da471ba6909e6c0305cae5c7a575
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +67,7 @@ void	ft_putnbr_base(int nb, int base)
 		max_power = max_power - 1;
 	}
 }
+<<<<<<< HEAD
 
 void	print_comb(int maxval, int digit)
 {
@@ -84,3 +89,5 @@ void	print_comb(int maxval, int digit)
 		left = left + 1;
 	}
 }
+=======
+>>>>>>> eda816b2d913da471ba6909e6c0305cae5c7a575
