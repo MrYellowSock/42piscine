@@ -6,26 +6,23 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:52:54 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/14 13:25:58 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 06:40:35 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../shared.h"
 
-void	ft_print_combn(int toprint, int curdepth, int maxdepth)
+
+void	ft_print_combn(int n)
 {
-	ft_putnbr_base(toprint, 10);
-	if(curdepth >= maxdepth)
+	int first = 1;
+	int last = power(10, n);
+	while(first < last)
 	{
-		return;
-	}
-	int last = toprint % 10;
-	int cur = 0;
-	while(cur < last)
-	{
-		ft_print_combn(toprint + cur * pow(10,curdepth),curdepth+1)
-		cur = cur + 1;
+		ft_putnbr_base(first, 10);
+		write(1, " ,", 2);
+		first = first + 1;
 	}
 }
 
