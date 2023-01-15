@@ -6,33 +6,18 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:14:07 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/13 12:29:09 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:30:45 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../shared.h"
 
-int power(int base,int pow)
+void	ft_putnbr(int nb)
 {
-	int s_c;
-	int s_accumulate = 1;
-	
-	s_c = 0;
-	while (s_c < pow) {
-		s_accumulate *= base;
-	}
-
-	return s_accumulate;
+	ft_putnbr_base(nb, 10);
 }
 
-void ft_putnbr(int nb,int base)
+int	main(void)
 {
-	int max_power = 0;
-	while (	nb / power(base,max_power) >= base) {
-		max_power = max_power + 1;
-	}
-}
-
-
-void main(void)
-{
-	ft_putnbr(402);
+	ft_putnbr(8004230);
+	return (0);
 }
