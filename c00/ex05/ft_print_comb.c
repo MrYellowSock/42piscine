@@ -6,34 +6,38 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:13:57 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 21:20:01 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/15 15:12:25 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../myio.h"
 #include <unistd.h>
 
-void	ft_print_comb(void)
-{
-	int	start;
+char increase(char x) { return x + 1; }
 
-	start = 0;
-	while (start < 1000)
-	{
-		if (m_is_uniq(start, 3))
-		{
-			if (start > 12)
-			{
-				write(1, ", ", 2);
-			}
-			m_put_nbr(start, 10, 3);
-		}
-		start += 1;
-	}
+void ft_print_comb(void) {
+  char arr[3];
+  int count = 0;
+  arr[0] = '0';
+
+  while (arr[0] <= '7') {
+    arr[1] = increase(arr[0]);
+    while (arr[1] <= '8') {
+      arr[2] = increase(arr[1]);
+      while (arr[2] <= '9') {
+        if (count > 0) {
+          write(1, ", ", 2);
+        }
+        write(1, arr, 3);
+        arr[2] = increase(arr[2]);
+        count += 1;
+      }
+      arr[1] = increase(arr[1]);
+    }
+    arr[0] = increase(arr[0]);
+  }
 }
 
-int	main(void)
-{
-	ft_print_comb();
-	return (0);
+int main(void) {
+  ft_print_comb();
+  return (0);
 }
