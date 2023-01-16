@@ -1,0 +1,50 @@
+# comment 1
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+#comment 2
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System Message Bus:/:/usr/sbin/nologin
+tss:x:59:59:Account used for TPM access:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/usr/sbin/nologin
+systemd-oom:x:999:999:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/usr/sbin/nologin
+polkitd:x:998:997:User for polkitd:/:/sbin/nologin
+avahi:x:70:70:Avahi mDNS/DNS-SD Stack:/var/run/avahi-daemon:/sbin/nologin
+geoclue:x:997:996:User for geoclue:/var/lib/geoclue:/sbin/nologin
+rtkit:x:172:172:RealtimeKit:/proc:/sbin/nologin
+chrony:x:996:995:chrony system user:/var/lib/chrony:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+colord:x:995:994:User for colord:/var/lib/colord:/sbin/nologin
+unbound:x:994:993:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+pipewire:x:993:992:PipeWire System Daemon:/var/run/pipewire:/sbin/nologin
+abrt:x:173:173::/etc/abrt:/sbin/nologin
+setroubleshoot:x:992:991:SELinux troubleshoot server:/var/lib/setroubleshoot:/sbin/nologin
+flatpak:x:991:990:Flatpak system helper:/:/usr/sbin/nologin
+lightdm:x:990:989::/var/lib/lightdm:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/usr/share/empty.sshd:/sbin/nologin
+dnsmasq:x:989:988:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/sbin/nologin
+tcpdump:x:72:72:tcpdump:/:/sbin/nologin
+systemd-coredump:x:986:986:systemd Core Dumper:/:/usr/sbin/nologin
+systemd-timesync:x:985:985:systemd Time Synchronization:/:/usr/sbin/nologin
+ss:x:1000:1000:ss:/home/ss:/usr/bin/zsh
+gdm:x:42:42:GNOME Display Manager:/var/lib/gdm:/usr/sbin/nologin
+greetd:x:984:983:greetd daemon:/var/lib/greetd:/sbin/nologin
+firebird:x:983:982::/:/sbin/nologin
+qemu:x:107:107:qemu user:/:/sbin/nologin
+saslauth:x:982:76:Saslauthd user:/run/saslauthd:/sbin/nologin
+gluster:x:981:979:GlusterFS daemons:/run/gluster:/sbin/nologin
+clevis:x:980:978:Clevis Decryption Framework unprivileged user:/var/cache/clevis:/sbin/nologin
+redis:x:979:977:Redis Database Server:/var/lib/redis:/sbin/nologin
+nginx:x:978:976:Nginx web server:/var/lib/nginx:/sbin/nologin
+toranon:x:977:975:Tor anonymizing user:/var/lib/tor:/sbin/nologin
