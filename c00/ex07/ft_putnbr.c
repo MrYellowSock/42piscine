@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:14:07 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/16 10:21:21 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:39:14 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -24,7 +24,7 @@ int m_power(int base, int pow) {
   return (s_accumulate);
 }
 
-int m_digitlen(unsigned int nb, int base) {
+int m_digitlen(unsigned int nb, unsigned int base) {
   int max_power;
 
   max_power = 0;
