@@ -6,7 +6,7 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:52:54 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 23:18:56 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:41:37 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	ft_print_combn(int n)
 			{
 				write(1, " ,", 2);
 			}
-			write(2, into_str(g_res, first) + BUF_LEN - n, n);
+			write(1, into_str(g_res, first) + BUF_LEN - n, n);
 			tot += 1;
 		}
 		first = first + 1;
