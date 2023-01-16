@@ -6,53 +6,52 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:52:54 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/16 12:08:47 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:33:36 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 #define BUF_LEN 10
 
-void copyTo(char *arr1, char *arr2) {
-  int i = 0;
-  while (i < BUF_LEN) {
-    arr2[i] = arr1[i];
-    i++;
+void print_comb(char toprint[BUF_LEN], int cur_dex, int expected_len) {
+  if (cur_dex >= expected_len) {
+    return;
   }
-}
-
-int length(char *arr) {
-  int i = 0;
-  while (*arr != 0 && i < BUF_LEN) {
-    i++;
+  if (cur_dex <= 0) {
+    toprint[cur_dex] = '0';
+  } else {
+    toprint[cur_dex] = toprint[cur_dex - 1] + 1;
   }
-  return i;
-}
 
-void ft_print_combn(char toprint[BUF_LEN], char current, char maxval,
-                    int expected_len) {
-  while (current <= maxval) {
-    char clone[BUF_LEN];
-    copyTo(toprint, clone);
-    int last_index = length(toprint);
-    clone[last_index] = current;
-    if (last_index + 1 >= expected_len) {
-      write(1, clone, expected_len);
-      write(1, ", ", 2);
-    } else {
-      ft_print_combn(clone, current + 1, maxval, expected_len);
+  while (toprint[cur_dex] <= '9') {
+    print_comb(toprint, cur_dex + 1, expected_len);
+    if (cur_dex == expected_len - 1) {
+      if (!(toprint[0] == '0' &&
+            toprint[expected_len - 1] == '0' + expected_len - 1)) {
+        write(1, ", ", 2);
+      }
+      write(1, toprint, expected_len);
     }
-    current++;
+    toprint[cur_dex]++;
   }
 }
 
-int main(void) {
+void ft_print_combn(int n) {
+
   char toprint[BUF_LEN];
   int i = 0;
   while (i < BUF_LEN) {
-    toprint[i] = 0;
+    toprint[i] = '0';
     i++;
   }
-  ft_print_combn(toprint, '0', '9', 2);
+  print_comb(toprint, 0, n);
+}
+
+int main(void) {
+  ft_print_combn(1);
+  ft_print_combn(2);
+  ft_print_combn(3);
+  ft_print_combn(9);
   return (0);
 }
