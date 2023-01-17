@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 09:30:05 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/13 10:39:55 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:08:52 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,4 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	ft_putchar('x');
-	return (0);
 }

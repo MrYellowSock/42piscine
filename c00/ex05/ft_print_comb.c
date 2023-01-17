@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:13:57 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 22:58:15 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:05:31 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,4 @@ void	ft_print_comb(void)
 		}
 		arr[0] = increase(arr[0]);
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb();
-	return (0);
 }

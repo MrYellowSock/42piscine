@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 12:14:07 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/16 20:48:39 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:03:38 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -79,22 +79,4 @@ void	ft_putnbr(int input)
 		nb = nb - s_cur_power * s_cur_digit;
 		max_index = max_index - 1;
 	}
-}
-
-int	main(void)
-{
-	int	i;
-
-	i = 0;
-	while (i < 157)
-	{
-		ft_putnbr(i);
-		ft_putnbr(-i);
-		write(1, " ", 2);
-		i++;
-	}
-	ft_putnbr(-2147483648);
-	write(1, " ", 2);
-	ft_putnbr(2147483647);
-	return (0);
 }

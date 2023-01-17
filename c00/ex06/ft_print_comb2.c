@@ -6,7 +6,7 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:11:29 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/15 23:03:04 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:04:29 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -46,10 +46,4 @@ void	my_comb(int maxval)
 void	ft_print_comb2(void)
 {
 	my_comb(99);
-}
-
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
 }

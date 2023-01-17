@@ -6,7 +6,7 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:52:54 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/16 20:44:48 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:03:34 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,4 @@ void	ft_print_combn(int n)
 		i++;
 	}
 	print_comb(toprint, 0, n);
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
-	ft_print_combn(2);
-	ft_print_combn(3);
-	ft_print_combn(9);
-	return (0);
 }

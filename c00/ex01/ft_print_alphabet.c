@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:42:00 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/13 10:48:25 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:08:38 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,4 @@ void	ft_print_alphabet(void)
 		write(1, &state, 1);
 		state = state + 1;
 	}
-}
-
-int	main(void)
-{
-	ft_print_alphabet();
-	return (0);
 }
