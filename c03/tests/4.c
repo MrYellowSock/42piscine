@@ -10,7 +10,9 @@ void	test(char *s1, char *s2)
 int	main(void)
 {
 	test("hello world", "wor");
+	test("hello world", "el");
 	test("hello world", "hell");
+	test("hello world", "hello worl");
 	test("hello world", "hello world");
 	test("hello world", "");
 	test("", "");

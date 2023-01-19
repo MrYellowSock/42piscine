@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:28:38 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/19 09:28:39 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/19 14:14:32 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*eos(char *s)
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	char	*targ;
-	int		count;
+	char			*targ;
+	unsigned int	count;
 
 	targ = eos(dest);
 	count = 0;

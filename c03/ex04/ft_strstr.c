@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:28:44 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/19 09:29:31 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/19 14:14:40 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ char	*ft_strstr(char *str, char *to_find)
 	int	n;
 
 	n = ft_strlen(to_find);
+	if (n <= 0)
+	{
+		return (str);
+	}
 	while (*str != 0)
 	{
 		if (ft_strncmp(str, to_find, n) == 0)

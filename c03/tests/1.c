@@ -15,4 +15,10 @@ int	main(void)
 	test("xyza0", "xyzb0", 4);
 	test("xyza0", "xyzb1", 4);
 	test("wowo", "owowo", 4);
+	test("abc", "abc", 6);
+	test("abc", "abd", 2);
+	test("abd", "abd", 2);
+	test("xyza0", "xyzb0", 5);
+	test("xyza0", "xyzb1", 5);
+	test("wowo", "owowo", 2);
 }
