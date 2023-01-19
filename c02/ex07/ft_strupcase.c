@@ -8,13 +8,13 @@ char	*ft_strupcase(char *str)
 	char	*i;
 	char	diff;
 
-	diff = 'A' - 'a';
+	diff = 'a' - 'A';
 	i = str;
 	while (*i != 0)
 	{
 		if (is_lower_alpha(*i))
 		{
-			*i = *i + diff;
+			*i = (*i - diff);
 		}
 		i++;
 	}

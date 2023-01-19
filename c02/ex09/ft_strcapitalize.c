@@ -10,7 +10,7 @@ int	is_lower_alpha(char a)
 
 int	is_upper_alpha(char a)
 {
-	return (a >= 'A' && a <= 'B');
+	return (a >= 'A' && a <= 'Z');
 }
 
 char	to_lower(char a)

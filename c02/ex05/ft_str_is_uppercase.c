@@ -1,6 +1,6 @@
 int	is_upper_alpha(char a)
 {
-	return (a >= 'A' && a <= 'B');
+	return (a >= 'A' && a <= 'Z');
 }
 
 int	ft_str_is_uppercase(char *str)
