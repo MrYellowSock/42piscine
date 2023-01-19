@@ -1,21 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/19 06:56:18 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/01/19 07:02:36 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_is_alp(char x)
 {
-	return (x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z');
-}
-
-int	is_lower_alpha(char a)
-{
-	return (a >= 'a' && a <= 'z');
-}
-
-int	is_upper_alpha(char a)
-{
-	return (a >= 'A' && a <= 'Z');
+	return ((x >= 'a' && x <= 'z') || (x >= 'A' && x <= 'Z'));
 }
 
 char	to_lower(char a)
 {
-	if (is_upper_alpha(a))
+	if (a >= 'A' && a <= 'Z')
 	{
 		return (a + ('a' - 'A'));
 	}
@@ -27,7 +29,7 @@ char	to_lower(char a)
 
 char	to_upper(char a)
 {
-	if (is_lower_alpha(a))
+	if (a >= 'a' && a <= 'z')
 	{
 		return (a - ('a' - 'A'));
 	}
