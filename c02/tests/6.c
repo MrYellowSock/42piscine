@@ -10,7 +10,7 @@ int	main(void)
 	str[2] = 'c';
 	str[3] = 'd';
 	str[4] = ' ';
-	str[5] = 'f';
+	str[5] = '\0';
 	str[6] = 'g';
 	str[7] = 'h';
 	str[8] = 'i';
