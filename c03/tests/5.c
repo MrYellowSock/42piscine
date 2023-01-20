@@ -22,6 +22,7 @@ int	main(void)
 	test("owowo", 2);
 
 	test("owo", 0);
+	test("owosdfkfjsldjflsdfjlsdjf ldsjfj 03 j0jsdfh0psdufjdfsdjfuf0sdufo", 20);
 	test("", 0);
 	test("", 9);
 }

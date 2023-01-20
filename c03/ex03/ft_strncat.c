@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:28:38 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/19 14:14:32 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:16:20 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 
 	targ = eos(dest);
 	count = 0;
-	while (*src != 0)
+	while (*src != 0 && count < nb)
 	{
-		if (count >= nb)
-		{
-			return (dest);
-		}
 		*targ = *src;
 		src++;
 		targ++;
