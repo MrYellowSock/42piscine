@@ -1,1 +1,1 @@
-gcc -W -W -W ex00/*.c -o /tmp/test && /tmp/test "$1"
+cc -Wall -Wextra -Werror -o /tmp/test ex00/*.c && /tmp/test "$1"
