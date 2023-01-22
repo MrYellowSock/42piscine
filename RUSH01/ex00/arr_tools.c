@@ -6,27 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:01:49 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/22 13:40:20 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:45:02 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	**alocate_square(int n)
-{
-	char	**toprint;
-	int		i;
-
-	toprint = (char **)malloc(n * sizeof(char *));
-	i = 0;
-	while (i < n)
-	{
-		toprint[i] = (char *)malloc(n * sizeof(char));
-		i++;
-	}
-	return (toprint);
-}
-
+// fill 1d array with val
 void	fill(char *arr, int size, int value)
 {
 	int	i;
@@ -39,6 +23,7 @@ void	fill(char *arr, int size, int value)
 	}
 }
 
+// fill 2d array with val
 void	fill2d(char **arr, int h, int w, int val)
 {
 	int	j;
@@ -51,6 +36,7 @@ void	fill2d(char **arr, int h, int w, int val)
 	}
 }
 
+// reverse arr
 char	*reverse(char *arr, char *out, int size)
 {
 	int	i;
@@ -64,6 +50,7 @@ char	*reverse(char *arr, char *out, int size)
 	return (out);
 }
 
+// copy a column from 2d array for 'size'
 char	*copy_vert(char **arr, char *out, int size, int column)
 {
 	int	j;
@@ -77,6 +64,7 @@ char	*copy_vert(char **arr, char *out, int size, int column)
 	return (out);
 }
 
+//compare interger array , just like strcmp
 int	arr_cmp(int *s1, int *s2, unsigned int n)
 {
 	int	diff;

@@ -6,7 +6,7 @@
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:22:44 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 12:24:14 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:52:37 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -15,6 +15,7 @@ char	*reverse(char *arr, char *out, int size);
 
 char	*copy_vert(char **arr, char *out, int size, int column);
 
+// how many box you can see.
 int	visible_boxes(char *arr, int size)
 {
 	int	pos;

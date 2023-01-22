@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   mem_tools.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 16:40:01 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/17 16:40:14 by skulkamt         ###   ########.fr       */
+/*   Created: 2023/01/22 14:31:51 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/01/22 15:40:27 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	cnt;
+#include <stdlib.h>
 
-	cnt = 0;
-	while (*str != 0)
+// allocate 2d array in square
+char	**alocate_square(int n)
+{
+	char	**toprint;
+	int		i;
+
+	toprint = (char **)malloc(n * sizeof(char *));
+	i = 0;
+	while (i < n)
 	{
-		cnt++;
-		str++;
+		toprint[i] = (char *)malloc(n * sizeof(char));
+		i++;
 	}
-	return (cnt);
+	return (toprint);
 }

@@ -6,59 +6,92 @@
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:20:57 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 12:56:52 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 15:50:54 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	**alocate_square(int n);
+#include <stdlib.h>
 
-void	fill(char *arr, int size, int value);
+char			**alocate_square(int n);
 
-void	fill2d(char **arr, int h, int w, int val);
+void			fill(char *arr, int size, int value);
 
-void	gen_comb(char **holder, int cur_j, int cur_i, int expected_len,
+void			fill2d(char **arr, int h, int w, int val);
+
+// find what number we can use at that position
+char	*non_dulplicate_map(char **holder, int cur_j, int cur_i,
+		int expected_len)
+{
+	int		j;
+	int		i;
+	char	*avail_numbers;
+
+	j = 0;
+	i = 0;
+	avail_numbers = malloc(expected_len * sizeof(char));
+	fill(avail_numbers, expected_len, 1);
+	while (i < cur_i)
+	{
+		avail_numbers[(unsigned char)holder[cur_j][i]] = 0;
+		i++;
+	}
+	while (j < cur_j)
+	{
+		avail_numbers[(unsigned char)holder[j][cur_i]] = 0;
+		j++;
+	}
+	return (avail_numbers);
+}
+
+typedef struct t_coordinate
+{
+	int			j;
+	int			i;
+}				t_coordinate;
+
+t_coordinate	at(int j, int i)
+{
+	t_coordinate	pos;
+
+	pos.j = j;
+	pos.i = i;
+	return (pos);
+}
+
+// generate cobinations , while calling callback function for every combination.
+void	gen_comb(char **holder, t_coordinate coord, int expected_len,
 		void (*callback)(char **, int))
 {
-	char	avail_numbers[expected_len];
-	char	avail_numbers2[expected_len];
-	int		i_canuse;
-	int		j_canuse;
+	char	*usables;
+	int		o;
 
-	if (cur_j >= expected_len)
+	if (coord.j >= expected_len)
 	{
 		return (callback(holder, expected_len));
 	}
-	if (cur_i >= expected_len)
+	if (coord.i >= expected_len)
 	{
-		return (gen_comb(holder, cur_j + 1, 0, expected_len, callback));
+		return (gen_comb(holder, at(coord.j + 1, 0), expected_len, callback));
 	}
-	fill(avail_numbers, expected_len, 1);
-	fill(avail_numbers2, expected_len, 1);
-	for (int i = 0; i < cur_i; i++)
+	usables = non_dulplicate_map(holder, coord.j, coord.i, expected_len);
+	o = 0;
+	while (o < expected_len)
 	{
-		avail_numbers[(unsigned char)holder[cur_j][i]] = 0;
-	}
-	for (int j = 0; j < cur_j; j++)
-	{
-		avail_numbers2[(unsigned char)holder[j][cur_i]] = 0;
-	}
-	for (int o = 0; o < expected_len; o++)
-	{
-		i_canuse = avail_numbers[o];
-		j_canuse = avail_numbers2[o];
-		if (i_canuse && j_canuse)
+		if (usables[o])
 		{
-			holder[cur_j][cur_i] = o;
-			gen_comb(holder, cur_j, cur_i + 1, expected_len, callback);
+			holder[coord.j][coord.i] = o;
+			gen_comb(holder, at(coord.j, coord.i + 1), expected_len, callback);
 		}
+		o++;
 	}
+	free(usables);
 }
 
+// wrapper for gen_comb
 void	gen_comb_ez(int n, void (*callback)(char **, int))
 {
 	char	**toprint;
 
 	toprint = alocate_square(n);
 	fill2d(toprint, n, n, -1);
-	gen_comb(toprint, 0, 0, n, callback);
+	gen_comb(toprint, at(0, 0), n, callback);
 }
-
