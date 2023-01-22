@@ -6,11 +6,9 @@
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:20:57 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 12:26:42 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:56:52 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
 char	**alocate_square(int n);
 
 void	fill(char *arr, int size, int value);
