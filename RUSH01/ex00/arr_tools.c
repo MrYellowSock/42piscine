@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 11:01:49 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/22 15:45:02 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:44:00 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	arr_cmp(int *s1, int *s2, unsigned int n)
 		return (0);
 	}
 	diff = *s1 - *s2;
-	if (*s1 == 0 || *s2 == 0 || diff != 0 || n <= 1)
+	if (diff != 0 || n <= 1)
 	{
 		return (diff);
 	}

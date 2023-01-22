@@ -6,7 +6,7 @@
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:22:44 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 15:52:37 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:29:14 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -43,12 +43,10 @@ int	*visible_boxes2d(char **arr, int *ans, int size)
 	char	*temp;
 	char	*temp2;
 	int		i;
-	int		j;
 
 	temp = malloc(size * sizeof(char));
 	temp2 = malloc(size * sizeof(char));
 	i = 0;
-	j = 0;
 	while (i < size)
 	{
 		copy_vert(arr, temp, size, i);
@@ -56,11 +54,12 @@ int	*visible_boxes2d(char **arr, int *ans, int size)
 		ans[size * 1 + i] = visible_boxes(reverse(temp, temp2, size), size);
 		i++;
 	}
-	while (j < size)
+	i = 0;
+	while (i < size)
 	{
-		ans[size * 2 + j] = visible_boxes(arr[j], size);
-		ans[size * 3 + j] = visible_boxes(reverse(arr[j], temp, size), size);
-		j++;
+		ans[size * 2 + i] = visible_boxes(arr[i], size);
+		ans[size * 3 + i] = visible_boxes(reverse(arr[i], temp, size), size);
+		i++;
 	}
 	free(temp);
 	free(temp2);
