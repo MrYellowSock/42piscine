@@ -38,8 +38,7 @@ char	*eon(char *str, char *mapping)
 
 int	invalid_base(char *mapping, int b)
 {
-	return (b < 2 || (mapping['-'] >= 0 && mapping['+'] >= 0
-			&& mapping[' '] >= 0));
+	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0 || mapping[' '] >= 0));
 }
 
 int	ft_atoi_base(char *str, char *base)
