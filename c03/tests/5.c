@@ -1,11 +1,19 @@
 #include "../ex05/ft_strlcat.c"
 #include <stdio.h>
-#include <bsd/string.h>
+#include <string.h>
 
-void	test(char *s2, int n)
+void	test2(char *s2, int n)
 {
 	char s1 [30]  = "hi";
 	char s1_2 [30] = "hi";
+	printf("your:%d lib:%ld\n", ft_strlcat(s1, s2, n), strlcat(s1_2, s2, n));
+	printf("your:%s: lib:%s:\n", s1, s1_2);
+}
+
+void	test(char *s2, int n)
+{
+	char s1 [30]  = "damn son";
+	char s1_2 [30] = "damn son";
 	printf("your:%d lib:%ld\n", ft_strlcat(s1, s2, n), strlcat(s1_2, s2, n));
 	printf("your:%s: lib:%s:\n", s1, s1_2);
 }

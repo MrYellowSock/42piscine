@@ -9,6 +9,12 @@ void	test(char *s1, char *s2, int n)
 
 int	main(void)
 {
+	test( "abc", "abc", 1 );
+	test( "abcd", "abc", 4 );
+	test( "abc", "abcd", 0 );
+	test( "abc", "xbc", 10 );
+	test( "", "", 3 );
+
 	test("abc", "abc", 3);
 	test("abc", "abd", 3);
 	test("abd", "abd", 3);
