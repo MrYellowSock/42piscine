@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/23 17:02:15 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/01/23 17:02:17 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #define MAP_SIZE 128
 
 // return base
@@ -38,7 +50,8 @@ char	*eon(char *str, char *mapping)
 
 int	invalid_base(char *mapping, int b)
 {
-	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0 || mapping[' '] >= 0));
+	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0
+			|| mapping[' '] >= 0));
 }
 
 int	ft_atoi_base(char *str, char *base)
