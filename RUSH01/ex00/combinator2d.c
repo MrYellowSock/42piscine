@@ -1,12 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   combinator2d.c                                     :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   */ /*   combinator2d.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:20:57 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 15:50:54 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/23 08:23:28 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -59,16 +58,17 @@ t_coordinate	at(int j, int i)
 
 // generate cobinations , while calling callback function for every combination.
 void	gen_comb(char **holder, t_coordinate coord, int expected_len,
-		void (*callback)(char **, int))
+		int (*callback)(char **, int, int))
 {
 	char	*usables;
 	int		o;
 
 	if (coord.j >= expected_len)
 	{
-		return (callback(holder, expected_len));
+		callback(holder,expected_len, expected_len);
+		return;
 	}
-	if (coord.i >= expected_len)
+	if (coord.i >= expected_len && callback(holder,expected_len,coord.j + 1))
 	{
 		return (gen_comb(holder, at(coord.j + 1, 0), expected_len, callback));
 	}
@@ -87,7 +87,7 @@ void	gen_comb(char **holder, t_coordinate coord, int expected_len,
 }
 
 // wrapper for gen_comb
-void	gen_comb_ez(int n, void (*callback)(char **, int))
+void	gen_comb_ez(int n, int (*callback)(char **, int, int))
 {
 	char	**toprint;
 

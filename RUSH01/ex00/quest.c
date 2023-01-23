@@ -6,7 +6,7 @@
 /*   By: ookamonu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 22:22:44 by ookamonu          #+#    #+#             */
-/*   Updated: 2023/01/22 17:29:14 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:34:06 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -64,4 +64,13 @@ int	*visible_boxes2d(char **arr, int *ans, int size)
 	free(temp);
 	free(temp2);
 	return (ans);
+}
+
+// top , bot , left , right
+void ans_pos(int j, int i,int size, int position[4])
+{
+	position[0] = i;
+	position[1] = size*1 + i;
+	position[2] = size*2 + j;
+	position[3] = size*3 + j;
 }
