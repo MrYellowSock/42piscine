@@ -1,1 +1,1 @@
- find . \(-name '*.sh'\) -exec basename -s '.sh' -a {} +
+ find . \( -name '*.sh' \) -exec basename -s '.sh' -a {} +
