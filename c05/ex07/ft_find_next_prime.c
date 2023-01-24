@@ -5,7 +5,7 @@ int	ft_is_prime(int nb)
 	i = 2;
 	while (i < nb)
 	{
-		if (nb % i > 0)
+		if (nb % i == 0)
 		{
 			return (0);
 		}
@@ -26,6 +26,6 @@ int	ft_find_next_prime(int nb)
 	}
 	else
 	{
-		return (ft_is_prime(nb + 1));
+		return (ft_find_next_prime(nb + 1));
 	}
 }
