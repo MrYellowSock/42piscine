@@ -7,5 +7,10 @@ int main ()
 	{
 		printf("(%d) -> %d\n",i,ft_find_next_prime(i));
 	}
+	int super_dupers[] = {2147483647, 900000000};
+	for (int i = 0; i < 2; i++)
+	{
+		printf("(%d) -> %d\n", super_dupers[i], ft_find_next_prime(super_dupers[i]));
+	}
 	return 0;
 }
