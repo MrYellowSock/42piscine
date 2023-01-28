@@ -13,6 +13,10 @@ int	*ft_range(int min, int max)
 	}
 	i = 0;
 	jumbo = malloc(size * sizeof(int));
+	if (jumbo == NULL)
+	{
+		return (NULL);
+	}
 	while (min < max)
 	{
 		jumbo[i++] = min++;

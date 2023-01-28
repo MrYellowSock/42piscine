@@ -1,17 +1,42 @@
-unsigned int	abby(int nb)
-{
-	unsigned int	newnb;
+#include <stdlib.h>
 
-	newnb = 0;
-	if (nb < 0)
+int	*ft_range(int min, int max)
+{
+	int	size;
+	int	*jumbo;
+	int	i;
+
+	size = max - min;
+	if (size <= 0)
 	{
-		nb += 1;
-		nb *= -1;
-		newnb = (unsigned int)nb + 1;
+		return (NULL);
+	}
+	i = 0;
+	jumbo = malloc(size * sizeof(int));
+	if (jumbo == NULL)
+	{
+		return (NULL);
+	}
+	while (min < max)
+	{
+		jumbo[i++] = min++;
+	}
+	return (jumbo);
+}
+
+int	ft_ultimate_range(int **range, int min, int max)
+{
+	*range = ft_range(min, max);
+	if (min >= max)
+	{
+		return (0);
+	}
+	else if (*range == NULL)
+	{
+		return (-1);
 	}
 	else
 	{
-		newnb = nb;
+		return (max - min);
 	}
-	return (newnb);
 }

@@ -21,6 +21,10 @@ char	*ft_strdup(char *src)
 
 	n = ft_strlen(src);
 	newone = malloc((n + 1) * sizeof(char));
+	if(newone == NULL)
+	{
+		return newone;
+	}
 	i = 0;
 	while (i < n)
 	{
