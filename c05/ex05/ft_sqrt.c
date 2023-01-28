@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:57:37 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/26 18:58:51 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:00:02 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_sqrt(int nb)
 	int	x1;
 
 	if (nb <= 1)
-		return (nb);
+		return (0);
 	x0 = nb / 2;
 	x1 = (x0 + nb / x0) / 2;
 	while (x1 < x0)

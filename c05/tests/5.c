@@ -7,8 +7,8 @@ int	main(void)
 	{
 		printf("(%d) -> %d\n", i, ft_sqrt(i));
 	}
-	int super_dupers[] = {2147483647, 900000000};
-	for (int i = 0; i < 2; i++)
+	int super_dupers[] = {-2147483648,2147483647, 900000000};
+	for (int i = 0; i < 3; i++)
 	{
 		printf("(%d) -> %d\n", super_dupers[i], ft_sqrt(super_dupers[i]));
 	}

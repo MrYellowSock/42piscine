@@ -6,39 +6,33 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:57:47 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/26 19:01:01 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:15:08 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int n)
+int	ft_is_prime(int nb , int i)
 {
-	int	i;
-
-	if (n == 1)
+	while (i < nb)
 	{
-		return (0);
-	}
-	i = 2;
-	while (i * i <= n)
-	{
-		if (n % i == 0)
+		if (nb % i == 0)
 		{
 			return (0);
 		}
-		i += 1;
+		i++;
+	}
+	if (nb <= 1)
+	{
+		return (0);
 	}
 	return (1);
 }
 
 int	ft_find_next_prime(int nb)
 {
-	if (nb <= 1)
+	int ans = nb;
+	while(!ft_is_prime(ans, 2) && ans <= 2 * nb + 1)
 	{
-		return (2);
+		ans++;
 	}
-	while (!ft_is_prime(nb) && nb < 2147483647)
-	{
-		nb++;
-	}
-	return (nb);
+	return ans;
 }
