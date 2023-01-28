@@ -6,11 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:57:47 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/28 16:15:08 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:00:05 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime(int nb , int i)
+int	ft_is_prime(int nb, int i)
 {
 	while (i < nb)
 	{
@@ -29,10 +29,12 @@ int	ft_is_prime(int nb , int i)
 
 int	ft_find_next_prime(int nb)
 {
-	int ans = nb;
-	while(!ft_is_prime(ans, 2) && ans <= 2 * nb + 1)
+	int	ans;
+
+	ans = nb;
+	while (!ft_is_prime(ans, 2) && ans <= 2 * nb + 1)
 	{
 		ans++;
 	}
-	return ans;
+	return (ans);
 }
