@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:57:47 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/28 19:00:05 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/28 19:12:58 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ int	ft_find_next_prime(int nb)
 	int	ans;
 
 	ans = nb;
-	while (!ft_is_prime(ans, 2) && ans <= 2 * nb + 1)
+	if (ans < 2)
+	{
+		ans = 2;
+	}
+	while (!ft_is_prime(ans, 2) && ans < 2147483647)
 	{
 		ans++;
 	}
