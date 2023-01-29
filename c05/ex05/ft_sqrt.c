@@ -6,22 +6,22 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:57:37 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/28 20:31:33 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/29 15:00:08 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-    int    i;
+	int	i;
 
-    i = 1;
-    if (nb == 1)
-        return (nb);
-    while (i <= nb / i)
-    {
-        if (i * i == nb)
-            return (i);
-        i++;
-    }
-    return (0);
+	i = 1;
+	if (nb == 1)
+		return (nb);
+	while (i <= nb / i)
+	{
+		if (i * i == nb)
+			return (i);
+		i++;
+	}
+	return (0);
 }
