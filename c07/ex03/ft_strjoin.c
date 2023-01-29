@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/29 18:47:16 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/01/29 18:47:30 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 char	*eos(char *s)
@@ -65,5 +77,5 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		ft_strcat(big_chungus, strs[i]);
 		i++;
 	}
-	return big_chungus;
+	return (big_chungus);
 }
