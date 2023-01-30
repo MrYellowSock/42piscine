@@ -6,7 +6,7 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:20:19 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/30 20:28:19 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/30 20:42:28 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,23 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	int					i;
 
 	bummer = malloc((ac + 1) * sizeof(struct s_stock_str));
+	if (!bummer)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (i < ac)
 	{
 		bummer[i].size = ft_strlen(av[i]);
 		bummer[i].str = av[i];
 		bummer[i].copy = ft_strdup(av[i]);
+		if (!bummer[i].str || !bummer[i].copy)
+		{
+			return (NULL);
+		}
 		i++;
 	}
 	bummer[ac].str = 0;
+	bummer[ac].copy = 0;
 	return (bummer);
 }
