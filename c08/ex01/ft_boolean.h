@@ -6,11 +6,12 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:11:09 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/30 21:58:01 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:14:26 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
 typedef int	t_bool;
 # define FT_BOOLEAN_H
