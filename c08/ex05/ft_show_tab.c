@@ -6,10 +6,11 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:20:46 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/30 20:29:56 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:03:39 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_stock_str.h"
 #include <unistd.h>
 #define OUTPUT_BUF 20
 

@@ -6,11 +6,12 @@
 /*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 20:20:19 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/30 20:42:28 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:04:50 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
