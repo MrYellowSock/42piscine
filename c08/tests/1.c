@@ -1,6 +1,6 @@
-#include "../ft_boolean.h"
-
-void	ft_putstr(char *str)
+#include "../ex01//ft_boolean.h"
+#include <unistd.h>
+void	ft_putstr_nl(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
@@ -13,8 +13,8 @@ int	main(int argc, char **argv)
 {
 	(void)argv;
 	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
+		ft_putstr_nl(EVEN_MSG);
 	else
-		ft_putstr(ODD_MSG);
+		ft_putstr_nl(ODD_MSG);
 	return (SUCCESS);
 }
