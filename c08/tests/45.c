@@ -14,5 +14,6 @@ int main()
 	strs[5] = "ww";
 	
 	ft_show_tab( ft_strs_to_tab(6, strs) );
+	ft_show_tab(NULL);
 	return EXIT_SUCCESS;
 }
