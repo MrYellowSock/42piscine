@@ -1,4 +1,5 @@
 #include "../ex03/ft_point.h"
+#include <stdio.h>
 
 void	set_point(t_point *point)
 {
@@ -11,5 +12,6 @@ int	main(void)
 	t_point	point;
 
 	set_point(&point);
+	printf("%d %d\n",point.x,point.y);
 	return (0);
 }

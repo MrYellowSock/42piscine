@@ -1,4 +1,3 @@
-#include "./ft_stock_str.h"
 #include "../ex04/ft_strs_to_tab.c"
 #include "../ex05/ft_show_tab.c"
 #include <stdio.h>
