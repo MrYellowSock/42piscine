@@ -11,7 +11,7 @@ int main()
 	strs[2] = "But";
 	strs[3] = "Why";
 	strs[4] = "";
-	strs[5] = "ww";
+	strs[5] = "uwu";
 	
 	ft_show_tab( ft_strs_to_tab(6, strs) );
 	ft_show_tab(NULL);
