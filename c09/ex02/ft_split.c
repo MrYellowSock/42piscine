@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skulkamt <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/01 13:37:24 by skulkamt          #+#    #+#             */
+/*   Updated: 2023/02/01 13:56:13 by skulkamt         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -48,13 +60,26 @@ unsigned int	world_len(char *start, char *charset)
 	return (len);
 }
 
+char	*copy_next(char **target, char *str, int wl)
+{
+	int	j;
+
+	*target = malloc((wl + 1) * sizeof(char));
+	(*target)[wl] = 0;
+	j = 0;
+	while (j < wl)
+	{
+		(*target)[j++] = *str++;
+	}
+	return (str);
+}
+
 char	**ft_split(char *str, char *charset)
 {
 	unsigned int	total;
 	char			**results;
 	int				i;
 	int				wl;
-	int				j;
 
 	total = count_words(str, charset);
 	results = malloc((total + 1) * sizeof(char *));
@@ -65,16 +90,11 @@ char	**ft_split(char *str, char *charset)
 		wl = world_len(str, charset);
 		if (wl > 0)
 		{
-			results[i] = malloc((wl + 1) * sizeof(char));
-			results[i][wl] = 0;
-			j = 0;
-			while (j < wl)
-			{
-				results[i][j++] = *str++;
-			}
+			str = copy_next(results + i, str, wl);
 			i++;
 		}
-		else {
+		else
+		{
 			str++;
 		}
 	}
