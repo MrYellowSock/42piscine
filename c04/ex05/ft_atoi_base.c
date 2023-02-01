@@ -6,11 +6,17 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 17:02:15 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/02/01 13:14:53 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/01 19:33:51 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define MAP_SIZE 128
+
+int	invalid_base(char *mapping, int b)
+{
+	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0
+			|| mapping[' '] >= 0));
+}
 
 // return base
 int	fill_map(char *mapping, int size, char *base)
@@ -33,6 +39,10 @@ int	fill_map(char *mapping, int size, char *base)
 		}
 		mapping[(unsigned char)*base++] = value++;
 	}
+	if (invalid_base(mapping, value))
+	{
+		return (0);
+	}
 	return (value);
 }
 
@@ -48,21 +58,10 @@ char	*eon(char *str, char *mapping)
 	}
 }
 
-int	invalid_base(char *mapping, int b)
-{
-	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0
-			|| mapping[' '] >= 0));
-}
-
-int	is_space(char x)
-{
-	return (x == '\t' || x == '\n' || x == '\v' || x == '\f' || x == '\r'
-		|| x == ' ');
-}
-
 char	*skip_space(char *str)
 {
-	while (*str != 0 && is_space(*str))
+	while (*str != 0 && (*str == '\t' || *str == '\n' || *str == '\v'
+			|| *str == '\f' || *str == '\r' || *str == ' '))
 	{
 		str++;
 	}
@@ -89,10 +88,6 @@ int	ft_atoi_base(char *str, char *base)
 		str++;
 	}
 	base_len = fill_map(mapping, MAP_SIZE, base);
-	if (invalid_base(mapping, base_len))
-	{
-		return (0);
-	}
 	endofnum = eon(str, mapping);
 	while (endofnum >= str)
 	{
