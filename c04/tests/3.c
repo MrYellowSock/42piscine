@@ -8,6 +8,8 @@ void test(char * str)
 
 int	main(void)
 {
+	printf("just wtf:%d\n", -1 * -2147483648);
+	printf("just wtf:%d\n", -1 * -2147483647);
 	test("-2147483648");
 	test("1");
 	test("0");
