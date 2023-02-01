@@ -6,13 +6,27 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 17:01:58 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/23 17:01:59 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:14:15 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int	is_space(char x)
+{
+	return (x == '\t' || x == '\n' || x == '\v' || x == '\f' || x == '\r'
+		|| x == ' ');
+}
 
 int	is_number(char a)
 {
 	return (a >= '0' && a <= '9');
+}
+
+char	*skip_space(char *str)
+{
+	while (*str != 0 && is_space(*str))
+	{
+		str++;
+	}
+	return (str);
 }
 
 char	*eon(char *str)
@@ -34,14 +48,15 @@ int	ft_atoi(char *str)
 	int		sum;
 
 	sum = 0;
-	if (*str == '-')
+	pow = 1;
+	str = skip_space(str);
+	while (*str == '-' || *str == '+')
 	{
-		pow = -1;
+		if (*str == '-')
+		{
+			pow *= -1;
+		}
 		str++;
-	}
-	else
-	{
-		pow = 1;
 	}
 	endofnum = eon(str);
 	while (endofnum >= str)

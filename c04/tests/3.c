@@ -15,5 +15,9 @@ int	main(void)
 	test("2147483647");
 	test("214748abcdsf");
 	test("-24dfdgx3");
+	test("   -24dfdgx3");
+	test("   --24dfdgx3");
+	test("   -+--24dfdgx3");
+	test("   -24-3");
 	return (0);
 }

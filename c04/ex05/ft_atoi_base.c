@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 17:02:15 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/23 17:02:17 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:14:53 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,21 @@ int	invalid_base(char *mapping, int b)
 			|| mapping[' '] >= 0));
 }
 
+int	is_space(char x)
+{
+	return (x == '\t' || x == '\n' || x == '\v' || x == '\f' || x == '\r'
+		|| x == ' ');
+}
+
+char	*skip_space(char *str)
+{
+	while (*str != 0 && is_space(*str))
+	{
+		str++;
+	}
+	return (str);
+}
+
 int	ft_atoi_base(char *str, char *base)
 {
 	char	mapping[MAP_SIZE];
@@ -64,9 +79,13 @@ int	ft_atoi_base(char *str, char *base)
 
 	sum = 0;
 	pow = 1;
-	if (*str == '-')
+	str = skip_space(str);
+	while (*str == '-' || *str == '+')
 	{
-		pow = -1;
+		if (*str == '-')
+		{
+			pow *= -1;
+		}
 		str++;
 	}
 	base_len = fill_map(mapping, MAP_SIZE, base);
