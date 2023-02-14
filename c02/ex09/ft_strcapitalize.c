@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 06:56:18 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/19 07:02:36 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:51:57 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	to_upper(char a)
 	}
 }
 
+// BAD do not use
 char	*ft_strcapitalize(char *str)
 {
 	char	*i;

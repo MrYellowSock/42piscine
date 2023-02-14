@@ -6,7 +6,7 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 06:56:30 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/19 06:56:31 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:52:28 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	show_hex(char a)
 	write(1, buf, 2);
 }
 
+// BAD do not use.
 void	ft_putstr_non_printable(char *str)
 {
 	while (*str != 0)

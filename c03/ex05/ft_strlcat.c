@@ -6,10 +6,11 @@
 /*   By: skulkamt <skulkamt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 09:28:57 by skulkamt          #+#    #+#             */
-/*   Updated: 2023/01/23 22:47:10 by skulkamt         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:55:09 by skulkamt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// BAD do not copy
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	dest_size;
