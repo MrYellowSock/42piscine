@@ -1,0 +1,4 @@
+int isascii(int c)
+{
+}
+
