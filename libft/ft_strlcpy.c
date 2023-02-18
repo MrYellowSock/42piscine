@@ -9,7 +9,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 
 	srclen = ft_strlen(src);
 	copylen = (srclen >= dstsize) ? (dstsize - 1) : srclen;
-    ft_memcpy(dst, src, copylen);
+	ft_memcpy(dst, src, copylen);
 	dst[copylen] = '\0';
 	return (srclen);
 }

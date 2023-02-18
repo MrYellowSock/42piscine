@@ -1,8 +1,13 @@
-void * memset(void *b, int c, int len)
+void	*ft_memset(void *b, int c, int len)
 {
-	int i = 0;
-	while (i < len) {
-		b[i++] = (unsigned char)c; 
+	unsigned char	*mem;
+	int				i;
+
+	mem = b;
+	i = 0;
+	while (i < len)
+	{
+		mem[i++] = (unsigned char)c;
 	}
-	return b;
+	return (b);
 }

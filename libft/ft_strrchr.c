@@ -10,15 +10,18 @@ char	*eos(char *s)
 	}
 }
 
-char * strrchr(const char *s, int c)
+char	*strrchr(const char *s, int c)
 {
-	char * e = eos(s);
-	while (e >= s){
+	char	*e;
+
+	e = eos(s);
+	while (e >= s)
+	{
 		if (*e == c)
 		{
-			return e;
+			return (e);
 		}
 		e--;
 	}
-	return NULL;
+	return (NULL);
 }

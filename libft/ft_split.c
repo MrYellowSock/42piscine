@@ -3,7 +3,7 @@
 // if it works, don't touch it
 int	contains(char needle, char hay)
 {
-	return needle == hay;
+	return (needle == hay);
 }
 
 unsigned int	count_words(const char *start, char sep)
@@ -54,7 +54,7 @@ const char	*copy_next(char **target, const char *str, int wl)
 	return (str);
 }
 
-char	**ft_split(char const*s, char c)
+char	**ft_split(char const *s, char c)
 {
 	unsigned int	total;
 	char			**results;

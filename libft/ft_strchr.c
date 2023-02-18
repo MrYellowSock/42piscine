@@ -1,16 +1,18 @@
 #include <stddef.h>
-char * ft_strchr(const char *s, int c)
+
+char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0'){
+	while (*s != '\0')
+	{
 		if (*s == c)
 		{
-			return s;
+			return (s);
 		}
 		s++;
 	}
 	if (c == '\0' && *s == '\0')
 	{
-		return s;
+		return (s);
 	}
-	return NULL;
+	return (NULL);
 }

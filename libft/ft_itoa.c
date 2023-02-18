@@ -2,12 +2,15 @@
 
 int	m_digitlen(unsigned int nb, unsigned int base)
 {
-   int num_digits = 0;
-    while (nb != 0) {
-        nb /= 10;
-        num_digits++;
-    }
-    return num_digits;
+	int	num_digits;
+
+	num_digits = 0;
+	while (nb != 0)
+	{
+		nb /= 10;
+		num_digits++;
+	}
+	return (num_digits);
 }
 
 unsigned int	remove_negative(int nb)
@@ -28,14 +31,20 @@ unsigned int	remove_negative(int nb)
 	return (newnb);
 }
 
-void put_to_string(unsigned int value,int negative, char* buffer, int num_digits) {
-    int pos = num_digits;
-    while (pos > 0) {
-        pos--;
-        buffer[pos] = '0' + (value % 10);
-        value /= 10;
-    }
-	if(negative){
+void	put_to_string(unsigned int value, int negative, char *buffer,
+		int num_digits)
+{
+	int	pos;
+
+	pos = num_digits;
+	while (pos > 0)
+	{
+		pos--;
+		buffer[pos] = '0' + (value % 10);
+		value /= 10;
+	}
+	if (negative)
+	{
 		pos--;
 		buffer[pos] = '-';
 	}
@@ -57,8 +66,8 @@ char	*ft_itoa(int n)
 	result = malloc(number_digit + 1);
 	if (result == NULL)
 	{
-		return  NULL;
+		return (NULL);
 	}
 	put_to_string(postivenumber, negative, result, number_digit);
-	return result;
+	return (result);
 }
