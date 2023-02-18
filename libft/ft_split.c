@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 // if it works, don't touch it
 int	contains(char needle, char hay)

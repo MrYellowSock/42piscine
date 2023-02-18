@@ -1,3 +1,4 @@
+#include "libft.h"
 int	is_space(char x)
 {
 	return (x == '\t' || x == '\n' || x == '\v' || x == '\f' || x == '\r'
@@ -9,7 +10,7 @@ int	is_number(char a)
 	return (a >= '0' && a <= '9');
 }
 
-char	*skip_space(char *str)
+const char	*skip_space(const char *str)
 {
 	while (*str != 0 && is_space(*str))
 	{
@@ -18,7 +19,7 @@ char	*skip_space(char *str)
 	return (str);
 }
 
-char	*eon(char *str)
+const char	*eon(const char *str)
 {
 	if (is_number(*str))
 	{
@@ -32,9 +33,9 @@ char	*eon(char *str)
 
 int	ft_atoi(const char *str)
 {
-	char	*endofnum;
-	int		pow;
-	int		sum;
+	const char	*endofnum;
+	int			pow;
+	int			sum;
 
 	sum = 0;
 	pow = 1;

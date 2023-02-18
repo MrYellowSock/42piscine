@@ -1,3 +1,5 @@
+#include "libft.h"
+
 char	*eos(char *s)
 {
 	if (*s == 0)

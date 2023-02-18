@@ -1,4 +1,6 @@
-void	*ft_memcpy(void *restrict dst, const void *restrict src, int n)
+#include <stddef.h>
+
+void	*ft_memcpy(void * dst, const void * src, size_t n)
 {
 	char		*d;
 	const char	*s;

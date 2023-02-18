@@ -1,7 +1,9 @@
+#include <stddef.h>
+
 // dst before src : copy from left to right
 // dst after src : copy from right to left
 // avoiding overwriting uncopied data (in case of the same block)
-void	*ft_memmove(void *dst, const void *src, int len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*d;
 	const char	*s;
