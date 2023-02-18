@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*eos(char *s)
+const char	*eos(const char *s)
 {
 	if (*s == 0)
 	{
@@ -14,14 +14,14 @@ char	*eos(char *s)
 
 char	*strrchr(const char *s, int c)
 {
-	char	*e;
+	const char	*e;
 
 	e = eos(s);
 	while (e >= s)
 	{
 		if (*e == c)
 		{
-			return (e);
+			return ((char *)e);
 		}
 		e--;
 	}

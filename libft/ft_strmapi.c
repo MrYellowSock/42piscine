@@ -1,7 +1,5 @@
 #include "libft.h"
 
-char	*ft_strdup(const char *s1);
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*newone;
