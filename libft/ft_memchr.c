@@ -1,11 +1,18 @@
-void * memchr(const void *s, int c, int n)
+#include <stddef.h>
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int pos = 0;
-	while (pos < n)
+	const unsigned char	*p;
+
+	p = s;
+	while (n > 0)
 	{
-		if (s[pos] == (unsigned char)c) {
-			return &s[pos];
+		if (*p == (unsigned char)c)
+		{
+			return ((void *)p);
 		}
+		p++;
+		n--;
 	}
-	return NULL;
+	return (NULL);
 }

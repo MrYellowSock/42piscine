@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-void	*memcpy(void *restrict dst, const void *restrict src, int n);
+void	*ft_memcpy(void *restrict dst, const void *restrict src, int n);
 size_t	ft_strlen(const char *s);
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		return (NULL);
 	}
-	memcpy(new_str, s1, len1);
-	memcpy(new_str + len1, s2, len2 + 1);
+	ft_memcpy(new_str, s1, len1);
+	ft_memcpy(new_str + len1, s2, len2 + 1);
 	return (new_str);
 }

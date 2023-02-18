@@ -1,50 +1,24 @@
 #include <unistd.h>
 
-int	ft_strlen(char *str)
-{
-	int	cnt;
-
-	cnt = 0;
-	while (*str != 0)
-	{
-		cnt++;
-		str++;
-	}
-	return (cnt);
-}
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int	diff;
-
-	diff = *s1 - *s2;
-	if (*s1 == 0 || *s2 == 0 || diff != 0 || n <= 1)
-	{
-		return (diff);
-	}
-	else
-	{
-		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
-	}
-}
-
+int ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t	ft_strlen(const char *s);
 // todo : add N
-char	*ft_strstr(char *str, char *to_find)
-{
+char * ft_strnstr(const char *big, const char *little, size_t len){
 	int	n;
 
-	n = ft_strlen(to_find);
+	n = ft_strlen(little);
 	if (n <= 0)
 	{
-		return (str);
+		return (big);
 	}
-	while (*str != 0)
+	while (*big != 0 && len)
 	{
-		if (ft_strncmp(str, to_find, n) == 0)
+		if (ft_strncmp(big, little, n) == 0)
 		{
-			return (str);
+			return (big);
 		}
-		str++;
+		big++;
+		len--;
 	}
 	return (NULL);
 }

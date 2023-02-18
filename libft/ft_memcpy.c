@@ -1,9 +1,13 @@
-void * memcpy(void *restrict dst, const void *restrict src, int n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, int n)
 {
-	int i = 0;
-	while (i < n) {
-		dst[i] = src[i];
-		i++;
+	char		*d;
+	const char	*s;
+
+	d = dst;
+	s = src;
+	while (n--)
+	{
+		*d++ = *s++;
 	}
-	return dst;
+	return (dst);
 }
