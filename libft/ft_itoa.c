@@ -1,76 +1,64 @@
-char *ft_itoa(int n)
-{
+#include <stdlib.h>
 
+int	m_digitlen(unsigned int nb, unsigned int base)
+{
+   int num_digits = 0;
+    while (nb != 0) {
+        nb /= 10;
+        num_digits++;
+    }
+    return num_digits;
 }
 
-int	invalid_base(char *mapping, int b)
+unsigned int	remove_negative(int nb)
 {
-	return (b < 2 || (mapping['-'] >= 0 || mapping['+'] >= 0
-			|| mapping[' '] >= 0));
-}
+	unsigned int	newnb;
 
-// return base
-int	fill_map(char *mapping, int size, char *base)
-{
-	int		i;
-	char	value;
-
-	i = 0;
-	while (i < size)
+	newnb = 0;
+	if (nb < 0)
 	{
-		mapping[i] = -1;
-		i++;
-	}
-	value = 0;
-	while (*base != 0)
-	{
-		if (mapping[(unsigned char)*base] >= 0)
-		{
-			return (0);
-		}
-		mapping[(unsigned char)*base++] = value++;
-	}
-	if (invalid_base(mapping, value))
-	{
-		return (0);
-	}
-	return (value);
-}
-
-char	*eon(char *str, char *mapping)
-{
-	if (mapping[(unsigned char)*str] >= 0)
-	{
-		return (eon(str + 1, mapping));
+		nb += 1;
+		nb *= -1;
+		newnb = (unsigned int)nb + 1;
 	}
 	else
 	{
-		return (str - 1);
+		newnb = nb;
+	}
+	return (newnb);
+}
+
+void put_to_string(unsigned int value,int negative, char* buffer, int num_digits) {
+    int pos = num_digits;
+    while (pos > 0) {
+        pos--;
+        buffer[pos] = '0' + (value % 10);
+        value /= 10;
+    }
+	if(negative){
+		pos--;
+		buffer[pos] = '-';
 	}
 }
 
-char	*skip_space(char *str)
+char	*ft_itoa(int n)
 {
-	while (*str != 0 && (*str == '\t' || *str == '\n' || *str == '\v'
-			|| *str == '\f' || *str == '\r' || *str == ' '))
-	{
-		str++;
-	}
-	return (str);
-}
+	int				s_cur_digit;
+	int				s_cur_power;
+	char			digit;
+	int				number_digit;
+	unsigned int	postivenumber;
+	char			*result;
+	int				negative;
 
-char	find_matching_char(char *mapping, int size, char value)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
+	negative = n < 0;
+	postivenumber = remove_negative(n);
+	number_digit = m_digitlen(postivenumber, 10) + negative;
+	result = malloc(number_digit + 1);
+	if (result == NULL)
 	{
-		if (mapping[i] == value)
-		{
-			return ((char)i);
-		}
-		i++;
+		return  NULL;
 	}
-	return (' ');
+	put_to_string(postivenumber, negative, result, number_digit);
+	return result;
 }

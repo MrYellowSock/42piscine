@@ -1,4 +1,6 @@
-size_t	strlen(const char *s)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s)
 {
 	unsigned int	cnt;
 

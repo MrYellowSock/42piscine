@@ -1,69 +1,24 @@
 #include <stdlib.h>
 
-char	*eos(char *s)
+void	*memcpy(void *restrict dst, const void *restrict src, int n);
+size_t	ft_strlen(const char *s);
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (*s == 0)
-	{
-		return (s);
-	}
-	else
-	{
-		return (eos(s + 1));
-	}
-}
+	size_t	len1;
+	size_t	len2;
+	size_t	new_len;
+	char	*new_str;
 
-char	*ft_strcat(char *dest, char *src)
-{
-	char	*targ;
-
-	targ = eos(dest);
-	while (*src != 0)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	new_len = len1 + len2 + 1;
+	new_str = malloc(new_len);
+	if (new_str == NULL)
 	{
-		*targ = *src;
-		src++;
-		targ++;
+		return (NULL);
 	}
-	*targ = 0;
-	return (dest);
-}
-
-int	ft_strlen(char *str)
-{
-	int	cnt;
-
-	cnt = 0;
-	while (*str != 0)
-	{
-		cnt++;
-		str++;
-	}
-	return (cnt);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	unsigned int	total_size;
-	int				i;
-	char			*big_chungus;
-
-	total_size = 1 + ft_strlen(sep) * (size - 1);
-	i = 0;
-	while (i < size)
-	{
-		total_size += ft_strlen(strs[i]);
-		i++;
-	}
-	big_chungus = malloc(total_size * sizeof(char));
-	big_chungus[0] = 0;
-	i = 0;
-	while (i < size)
-	{
-		if (i > 0)
-		{
-			ft_strcat(big_chungus, sep);
-		}
-		ft_strcat(big_chungus, strs[i]);
-		i++;
-	}
-	return (big_chungus);
+	memcpy(new_str, s1, len1);
+	memcpy(new_str + len1, s2, len2 + 1);
+	return (new_str);
 }

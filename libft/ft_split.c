@@ -1,19 +1,12 @@
 #include <stdlib.h>
 
-int	contains(char needle, char *hay)
+// if it works, don't touch it
+int	contains(char needle, char hay)
 {
-	while (*hay != 0)
-	{
-		if (*hay == needle)
-		{
-			return (1);
-		}
-		hay++;
-	}
-	return (0);
+	return needle == hay;
 }
 
-unsigned int	count_words(char *start, char *charset)
+unsigned int	count_words(const char *start, char sep)
 {
 	unsigned int	count;
 	int				prev_is_sep;
@@ -23,7 +16,7 @@ unsigned int	count_words(char *start, char *charset)
 	count = 0;
 	while (*start != 0)
 	{
-		cur_is_sep = contains(*start, charset);
+		cur_is_sep = contains(*start, sep);
 		if (prev_is_sep && !cur_is_sep)
 		{
 			count++;
@@ -34,12 +27,12 @@ unsigned int	count_words(char *start, char *charset)
 	return (count);
 }
 
-unsigned int	world_len(char *start, char *charset)
+unsigned int	world_len(const char *start, char sep)
 {
 	unsigned int	len;
 
 	len = 0;
-	while (*start != 0 && !contains(*start, charset))
+	while (*start != 0 && !contains(*start, sep))
 	{
 		len++;
 		start++;
@@ -47,7 +40,7 @@ unsigned int	world_len(char *start, char *charset)
 	return (len);
 }
 
-char	*copy_next(char **target, char *str, int wl)
+const char	*copy_next(char **target, const char *str, int wl)
 {
 	int	j;
 
@@ -61,28 +54,28 @@ char	*copy_next(char **target, char *str, int wl)
 	return (str);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const*s, char c)
 {
 	unsigned int	total;
 	char			**results;
 	unsigned int	i;
 	int				wl;
 
-	total = count_words(str, charset);
+	total = count_words(s, c);
 	results = malloc((total + 1) * sizeof(char *));
 	results[total] = 0;
 	i = 0;
-	while (*str != 0 && i < total)
+	while (*s != 0 && i < total)
 	{
-		wl = world_len(str, charset);
+		wl = world_len(s, c);
 		if (wl > 0)
 		{
-			str = copy_next(results + i, str, wl);
+			s = copy_next(results + i, s, wl);
 			i++;
 		}
 		else
 		{
-			str++;
+			s++;
 		}
 	}
 	return (results);
