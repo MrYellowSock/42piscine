@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	m_digitlen(unsigned int nb, unsigned int base)
+int	m_digitlen(unsigned int nb)
 {
 	int	num_digits;
 
@@ -52,9 +52,6 @@ void	put_to_string(unsigned int value, int negative, char *buffer,
 
 char	*ft_itoa(int n)
 {
-	int				s_cur_digit;
-	int				s_cur_power;
-	char			digit;
 	int				number_digit;
 	unsigned int	postivenumber;
 	char			*result;
@@ -62,7 +59,7 @@ char	*ft_itoa(int n)
 
 	negative = n < 0;
 	postivenumber = remove_negative(n);
-	number_digit = m_digitlen(postivenumber, 10) + negative;
+	number_digit = m_digitlen(postivenumber) + negative;
 	result = malloc(number_digit + 1);
 	if (result == NULL)
 	{

@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	n;
 	char	*newone;
-	int		i;
+	size_t	i;
 
 	s += start;
 	n = getsuitable_size(s, len);
