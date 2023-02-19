@@ -1,29 +1,21 @@
 #include "libft.h"
 
-const char	*eos(const char *s)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (*s == 0)
-	{
-		return (s);
-	}
-	else
-	{
-		return (eos(s + 1));
-	}
-}
+	size_t	tocheck;
+	char	*lastok;
+	size_t	i;
 
-char	*strrchr(const char *s, int c)
-{
-	const char	*e;
-
-	e = eos(s);
-	while (e >= s)
+	lastok = NULL;
+	tocheck = ft_strlen(s);
+	i = 0;
+	while (i <= tocheck)
 	{
-		if (*e == c)
+		if (s[i] == (char)c)
 		{
-			return ((char *)e);
+			lastok = ((char *)&s[i]);
 		}
-		e--;
+		i++;
 	}
-	return (NULL);
+	return (lastok);
 }

@@ -5,12 +5,15 @@ int	m_digitlen(unsigned int nb)
 	int	num_digits;
 
 	num_digits = 0;
-	while (nb != 0)
+	while (nb > 0)
 	{
 		nb /= 10;
 		num_digits++;
 	}
-	return (num_digits);
+	if (num_digits == 0)
+		return (1);
+	else
+		return (num_digits);
 }
 
 unsigned int	remove_negative(int nb)
@@ -22,7 +25,7 @@ unsigned int	remove_negative(int nb)
 	{
 		nb += 1;
 		nb *= -1;
-		newnb = (unsigned int)nb + 1;
+		newnb = (unsigned int)(nb + 1);
 	}
 	else
 	{
@@ -34,19 +37,15 @@ unsigned int	remove_negative(int nb)
 void	put_to_string(unsigned int value, int negative, char *buffer,
 		int num_digits)
 {
-	int	pos;
-
-	pos = num_digits;
-	while (pos > 0)
-	{
-		pos--;
-		buffer[pos] = '0' + (value % 10);
-		value /= 10;
-	}
 	if (negative)
 	{
-		pos--;
-		buffer[pos] = '-';
+		*buffer++ = '-';
+	}
+	while (value > 0 || num_digits > 0)
+	{
+		num_digits--;
+		buffer[num_digits] = '0' + (value % 10);
+		value /= 10;
 	}
 }
 
@@ -59,8 +58,8 @@ char	*ft_itoa(int n)
 
 	negative = n < 0;
 	postivenumber = remove_negative(n);
-	number_digit = m_digitlen(postivenumber) + negative;
-	result = malloc(number_digit + 1);
+	number_digit = m_digitlen(postivenumber) ;
+	result = ft_calloc(number_digit + negative + 1, 1);
 	if (result == NULL)
 	{
 		return (NULL);

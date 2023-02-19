@@ -1,15 +1,11 @@
 #include "libft.h"
 
-size_t	getsuitable_size(const char *str, size_t maxlen)
+size_t	min(size_t a, size_t b)
 {
-	size_t	n;
-
-	n = ft_strlen(str);
-	if (n > maxlen)
-	{
-		n = maxlen;
-	}
-	return (n);
+	if (a < b)
+		return (a);
+	else
+		return (b);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -18,9 +14,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*newone;
 	size_t	i;
 
-	s += start;
-	n = getsuitable_size(s, len);
-	newone = malloc((n + 1) * sizeof(char));
+	s += min(start, ft_strlen(s));
+	n = min(len, ft_strlen(s));
+	newone = ft_calloc((n + 1) , sizeof(char));
 	if (newone == NULL)
 	{
 		return (newone);
@@ -31,6 +27,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		newone[i] = s[i];
 		i++;
 	}
-	newone[n] = 0;
 	return (newone);
 }
