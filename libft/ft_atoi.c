@@ -1,11 +1,11 @@
 #include "libft.h"
 
-int	ispace(char c)
+int	ispace(int c)
 {
-	return (c >= 9 && c <= 13 || c == ' ');
+	return (( c >= 9 && c <= 13 ) || c == ' ');
 }
 
-const char	*skip(const char *str, int (*f)(char c))
+const char	*skip(const char *str, int (*f)(int c))
 {
 	while (f(*str))
 	{
@@ -22,12 +22,14 @@ int	ft_atoi(const char *str)
 
 	sum = 0;
 	pow = 1;
-	if (*str == '-')
+	str = skip(str, ispace);
+	if (*str == '-' || *str == '+')
 	{
-		pow *= -1;
+		if(*str == '-')
+			pow *= -1;
 		str++;
 	}
-	endofnum = eon(str);
+	endofnum = skip(str, ft_isdigit) - 1;
 	if (endofnum < str)
 	{
 		return (0);

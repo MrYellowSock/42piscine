@@ -1,20 +1,21 @@
 #include "libft.h"
 
+// if 0 then n will overflow after subtraction
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	srclen;
-	size_t	copylen;
+	size_t	n;
+	size_t	src_size;
 
-	srclen = ft_strlen(src);
-	copylen = srclen;
-	if (srclen >= dstsize)
+	src_size = ft_strlen(src);
+	n = dstsize;
+	while (n != 0 && --n > 0)
 	{
-		copylen = dstsize - 1;
+		if ((*dst++ = *src++) == '\0')
+			break ;
 	}
-	if (copylen > 0)
+	if (n == 0 && dstsize != 0)
 	{
-		ft_memcpy(dst, src, copylen);
-		dst[copylen] = '\0';
+		*dst = '\0';
 	}
-	return (srclen);
+	return (src_size);
 }

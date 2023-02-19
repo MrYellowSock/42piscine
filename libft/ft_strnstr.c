@@ -8,6 +8,7 @@ size_t	min(size_t a, size_t b)
 	else
 		return (b);
 }
+
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t			little_len;
